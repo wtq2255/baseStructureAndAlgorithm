@@ -2,19 +2,24 @@
 # coding: utf-8
 
 class Queue():
+    '''实现队列结构'''
     def __init__(qu,size):
+        '''初始化队列，并设置队列大小'''
         qu.queue = list()
         qu.size = size
         qu.head = -1
         qu.tail = -1
 
     def isFull(qu):
+        '''返回队列是否已满'''
         return qu.tail - qu.head == qu.size
 
     def isEmpty(qu):
+        '''返回队列时候为空'''
         return qu.tail == qu.head
 
     def enQueue(qu, content):
+        '''入队操作'''
         if qu.isFull():
             print 'Queue is full'
         else:
@@ -22,6 +27,7 @@ class Queue():
             qu.tail += 1
 
     def deQueue(qu):
+        '''出队操作'''
         if qu.isEmpty():
             return 'Queue is empty'
         else:
